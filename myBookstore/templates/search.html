@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+
+{% if books|length == 0 %}
+<p>No results found for "{{ term }}".</p>
+{% else %}
+<div class="book-row">
+    {% set count = 0 %}
+    {% for book in books %}
+    <div class="book-item" style="display:inline-block; width:150px; margin:10px; text-align:center;">
+        <a href="{{ url_for('book_detail', book_id=book.id) }}">
+            <img src="{{ url_for('static', filename='images/books/' ~ book[6] ~ '.png') }}" alt="{{ book[2] }}"
+                style="max-width:150px; max-height:200px">
+        </a>
+        <p>{{ book[2] }}</p>
+    </div>
+
+    {% set count = count + 1 %}
+    {% if count % 4 == 0 %}
+    <br>
+    {% endif %}
+    {% endfor %}
+</div>
+
+
+{% endif %}
+
+{% endblock %}

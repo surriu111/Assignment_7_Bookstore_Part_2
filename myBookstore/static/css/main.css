@@ -1,0 +1,521 @@
+/* 全局重置与基础样式 - 复古优雅基调 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playfair Display", "Times New Roman", Georgia, serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 1em;
+    color: #5D2932;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* 头部样式 - 重点修复对齐问题 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* 确保所有子元素垂直居中对齐 */
+    margin: 20px 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #D4B483;
+}
+
+/* 中间搜索区域 - 修复对齐和间距 */
+#searchBoxForm {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    /* 搜索框和按钮垂直居中 */
+    gap: 8px;
+    /* 统一元素间距，替代margin */
+}
+
+#searchBox {
+    height: 28px;
+    padding: 0 10px;
+    border: 1px solid #D4B483;
+    border-radius: 4px;
+    background-color: #FFFDFA;
+    color: #5D2932;
+    font-size: 0.9em;
+    width: 200px;
+    /* 固定宽度，提升布局稳定性 */
+}
+
+/* 下拉菜单样式 - 确保与搜索框对齐 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 0;
+    /* 取消额外左边距，用gap统一控制 */
+}
+
+.dropdownSelect {
+    width: 180px;
+    padding: 6px 10px;
+    background-color: #7A3B48;
+    color: #F9F5F1;
+    text-align: center;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid #D4B483;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    height: 28px;
+    /* 与搜索框高度一致，确保对齐 */
+    line-height: 1.4;
+    /* 优化文字垂直居中 */
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    min-width: 180px;
+    padding-top: 8px;
+    z-index: 1;
+    border-radius: 4px;
+    background-color: #7A3B48;
+    text-align: center;
+    border: 1px solid #D4B483;
+    border-top: none;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.dropdownContent a {
+    display: block;
+    padding: 6px 0;
+    color: #F9F5F1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.dropdownContent a:hover {
+    color: #D4B483;
+    background-color: #68303C;
+}
+
+/* 右侧头部样式 */
+#rightHeader {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+}
+
+#cartCount {
+    width: 140px;
+    margin: 0 15px 0 0;
+    font-size: 0.9em;
+    color: #5D2932;
+    text-align: right;
+}
+
+.loginButton {
+    background-color: #7A3B48;
+    width: 70px;
+    height: 28px;
+    margin: 0;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 4px;
+    border: 1px solid #D4B483;
+    transition: all 0.3s ease;
+}
+
+.loginButton:hover {
+    background-color: #68303C;
+}
+
+.loginButton a {
+    color: #F9F5F1;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9em;
+}
+
+.loginButton a:hover {
+    color: #D4B483;
+}
+
+/* 页脚样式 */
+footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid #D4B483;
+    border-bottom: 2px solid #D4B483;
+    margin: 30px 30px 20px;
+    padding: 20px 0;
+    font-size: 0.85em;
+    color: #68303C;
+}
+
+#footerLeft {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 0 10px;
+    width: 350px;
+}
+
+#footerLeft a {
+    color: #7A3B48;
+    text-decoration: none;
+    padding-top: 0;
+    transition: all 0.3s ease;
+}
+
+#footerLeft a:hover {
+    color: #D4B483;
+    text-decoration: underline;
+}
+
+#footerRight {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    width: 100px;
+}
+
+#footerRight a {
+    color: #7A3B48;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#footerRight a:hover {
+    color: #D4B483;
+    text-decoration: underline;
+}
+
+/* 通用组件样式 */
+#notFoundMessage {
+    color: #7A3B48;
+    font-style: italic;
+    text-align: center;
+    margin: 30px 0;
+    font-size: 1.1em;
+}
+
+.commandButton {
+    height: 32px;
+    width: 160px;
+    border-radius: 4px;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 32px;
+    background-color: #7A3B48;
+    font-size: 0.9em;
+    color: #F9F5F1;
+    text-decoration: none;
+    display: block;
+    border: 1px solid #D4B483;
+    transition: all 0.3s ease;
+}
+
+.commandButton:hover {
+    background-color: #68303C;
+    color: #D4B483;
+}
+
+.submitButton {
+    height: 28px;
+    padding: 0 15px;
+    border-radius: 4px;
+    border: 1px solid #D4B483;
+    margin: 0;
+    /* 取消额外margin，用gap统一控制 */
+    text-align: center;
+    background-color: #7A3B48;
+    color: #F9F5F1;
+    font-size: 0.9em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #68303C;
+    color: #D4B483;
+}
+
+/* 主内容区域样式 */
+main {
+    display: flex;
+    margin: 20px 30px;
+    border: 1px solid #D4B483;
+    border-radius: 4px;
+    background-color: #FFFDFA;
+    box-shadow: 0 2px 8px rgba(122, 59, 72, 0.1);
+}
+
+h1 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #7A3B48;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    background-color: #D4B483;
+    margin: 10px auto 0;
+}
+
+/* 首页样式 - 重点修复分类图片布局 */
+#mainLeft {
+    width: 55%;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#mainLeft p {
+    font-size: 1.1em;
+    color: #68303C;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.welcomeText {
+    max-width: 450px;
+    font-style: italic;
+}
+
+#mainRight {
+    width: 45%;
+    border-left: 1px solid #D4B483;
+    padding: 40px 20px;
+    background-color: #F9F5F1;
+    text-align: center;
+}
+
+
+
+/* 全局样式保持不变，只修改/添加以下分类相关样式 */
+
+#categorySelections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* 统一分类项之间的间距，避免挤在一起 */
+    padding: 10px 0;
+}
+
+/* 关键：给分类项设置固定尺寸，作为布局基准 */
+.category {
+    width: 200px;
+    /* 固定容器宽度，确保每个分类项占比一致 */
+    height: 280px;
+    /* 固定容器高度，容纳图片+文字，避免高度不一致 */
+    margin: 0;
+    text-align: center;
+    color: #7A3B48;
+    font-weight: 500;
+    border: 1px solid #D4B483;
+    border-radius: 4px;
+    background-color: #FFFDFA;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* 图片在上，文字在下 */
+    align-items: center;
+    justify-content: flex-start;
+    /* 内容靠上对齐 */
+    padding: 15px;
+    /* 内部留白，避免图片贴边 */
+}
+
+/* 图片容器：强制统一尺寸，让图片在固定区域内适配 */
+.category a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* 继承容器高度，确保整体统一 */
+}
+
+/* 关键：控制图片显示区域，忽略inline样式的max-width，用CSS统一管理 */
+.category a img {
+    width: 100%;
+    /* 占满图片容器宽度 */
+    height: 180px;
+    /* 固定图片显示高度（核心！） */
+    /* object-fit: cover; 保持图片比例，裁剪多余部分（不会拉伸） */
+    border-radius: 2px;
+    border: 1px solid #D4B483;
+    /* 覆盖inline的max-width，避免冲突 */
+    max-width: none !important;
+    max-height: none !important;
+}
+
+/* 分类文字：固定位置在图片下方，统一对齐 */
+.category span {
+    margin-top: 15px;
+    line-height: 1.4;
+    padding: 0 5px;
+    flex: 1;
+    /* 让文字区域自动填充剩余空间，确保底部对齐 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* 分类页面样式 */
+#catLeft {
+    width: 250px;
+    border-right: 1px solid #D4B483;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 0;
+    background-color: #F9F5F1;
+}
+
+.notSelectedCategory {
+    height: 34px;
+    width: 160px;
+    border-radius: 4px;
+    margin: 12px;
+    text-align: center;
+    line-height: 34px;
+    background-color: #7A3B48;
+    border: 1px solid #D4B483;
+    transition: all 0.3s ease;
+}
+
+.notSelectedCategory:hover {
+    background-color: #68303C;
+    transform: translateX(5px);
+}
+
+.notSelectedCategory a {
+    color: #F9F5F1;
+    font-size: 0.9em;
+    text-decoration: none;
+    display: block;
+}
+
+.selectedCategory {
+    height: 34px;
+    width: 160px;
+    border: 2px solid #7A3B48;
+    border-radius: 4px;
+    margin: 12px;
+    text-align: center;
+    line-height: 34px;
+    color: #7A3B48;
+    font-size: 0.9em;
+    background-color: #FFFDFA;
+    font-weight: 500;
+}
+
+/* 书籍展示区域 */
+#catRight {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F9F5F1;
+    justify-content: center;
+    gap: 25px;
+}
+
+.book {
+    width: 320px;
+    margin: 0;
+    display: flex;
+    background-color: #FFFDFA;
+    border: 1px solid #D4B483;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(122, 59, 72, 0.08);
+    transition: all 0.3s ease;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(122, 59, 72, 0.15);
+}
+
+.book img {
+    border: 1px solid #D4B483;
+    border-radius: 2px;
+    width: 100px;
+    /* 固定书籍封面宽度 */
+    height: 150px;
+    /* 固定书籍封面高度 */
+    object-fit: cover;
+}
+
+.bookDetailBox {
+    margin: 0 0 0 15px;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;
+}
+
+.bookTitle {
+    font-weight: 500;
+    color: #7A3B48;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.bookDetail {
+    margin-top: 4px;
+    font-size: 0.85em;
+    color: #68303C;
+}
+
+.bookPrice {
+    margin-top: 8px;
+    font-weight: 500;
+    color: #7A3B48;
+    font-size: 0.95em;
+}
+
+.actionButton {
+    height: 26px;
+    width: 80px;
+    border-radius: 4px;
+    margin-top: 12px;
+    line-height: 26px;
+    text-align: center;
+    background-color: #7A3B48;
+    color: #F9F5F1;
+    font-size: 0.85em;
+    text-decoration: none;
+    border: 1px solid #D4B483;
+    transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+    background-color: #68303C;
+    color: #D4B483;
+}

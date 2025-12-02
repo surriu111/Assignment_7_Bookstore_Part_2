@@ -1,0 +1,23 @@
+<!-- book_detail.html -->
+{% extends 'base.html' %}
+
+{% block container %}
+<div class='book'>
+    <div>
+        <img src="{{ url_for('static', filename='images/books/' ~ book['image'] ~ '.png') }}" alt="{{ book['title'] }}"
+             style="max-width:150px; max-height:200px">
+    </div>
+    <div class='bookDetailBox'>
+        <p class='bookTitle'>{{ book['title'] }}</p>
+        <p class='bookDetail'>by {{ book['author'] }}</p>
+        <p class='bookDetail'> ISBN: {{ book['isbn'] }}</p>
+        <p class='bookPrice'>{{ book['price'] }}</p>
+
+        <a class='actionButton' href='#'>Add to cart</a>
+
+        {% if book['readNow'] == 1 %}
+        <a class='actionButton' href='#'>Read Now</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
